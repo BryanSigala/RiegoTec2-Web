@@ -9,11 +9,10 @@ const cors = initMiddleware(
 )
 
 export default async function handler(req, res){
-    const { id } = req.query
     await cors(req,res)
     if(req.method==='GET'){
       const result = await conn.query('SELECT NOW()')
-      res.json({hora: result[0][0]['NOW()'], iden: id})
+      res.json({hora: result[0][0]['NOW()']})
     }else if(req.method==='PATCH'){
       res.json({metodo: 'patch'})
     }else{
