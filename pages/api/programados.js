@@ -10,6 +10,15 @@ const cors = initMiddleware(
 
 export default async function handler(req, res){
     await cors(req,res)
-    const result = await conn.query('SELECT NOW()')
-    res.send('Riegos programados ' + result[0][0]['NOW()'])
+    if(req.method==='GET'){
+        const programados = await conn.query('SELECT * FROM programacionriego')
+        res.json(programados[0])
+    }else if (req.method==='POST'){
+        const prograNuevo = await conn.query(`INSERT INTO programacionriego (periodo, frecuencia, horaInicio, horaFin, duracion, idUsuario)
+        VALUES ('${req.body.periodo}', ${req.body.frecuencia}, '${req.body.horaInicio}', '${req.body.horaFin}', ${req.body.duracion}, ${req.body.usuario})`)
+        res.json(prograNuevo)
+    }else{
+        res.json({error: 'metodo no soportado'})
+    }
+    
 }

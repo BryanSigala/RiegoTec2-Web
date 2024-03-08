@@ -11,6 +11,11 @@ const cors = initMiddleware(
 export default async function handler(req, res){
     const { id } = req.query
     await cors(req,res)
-    const result = await conn.query('SELECT NOW()')
-    res.send(`Riego realizado: ${id} ` + result[0][0]['NOW()'])
+    if(req.method==='GET'){
+      const riego = await conn.query(`SELECT * FROM registroriego WHERE idRegistroRiego=${id}`)
+      res.json(riego[0][0])
+    }else{
+      res.json({error: 'metodo no soportado'})
+    }
+    
 }
