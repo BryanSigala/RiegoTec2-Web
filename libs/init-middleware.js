@@ -14,5 +14,4 @@ function initMiddleware(middleware) {
   });
 }
 
-// Exporta la función de inicialización del middleware CORS
 export default initMiddleware;
