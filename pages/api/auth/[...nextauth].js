@@ -1,5 +1,5 @@
 import NextAuth from "next-auth"
-import Providers from "next-auth/providers"
+import Credentials from "next-auth/providers/credentials"
 import {conn} from '@/libs/mysql'
 import Cors from 'cors'
 import initMiddleware from '@/libs/init-middleware';
@@ -12,7 +12,7 @@ const cors = initMiddleware(
 
 export default NextAuth({
   providers: [
-    Providers.Credentials({
+    Credentials({
       name:  'Credentials',
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
