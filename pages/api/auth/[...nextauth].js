@@ -15,7 +15,7 @@ export default NextAuth({
     Credentials({
       name:  'Credentials',
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "administrador" },
+        username: { label: "Username", type: "text", placeholder: "Usuario" },
         password: { label: "Password", type: "password" } 
       },
       async authorize(credentials, req) {
