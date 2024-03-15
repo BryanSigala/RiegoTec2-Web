@@ -18,7 +18,7 @@ export default async function handler(req, res){
         VALUES ('${req.body.periodo}', ${req.body.frecuencia}, '${req.body.horaInicio}', '${req.body.horaFin}', ${req.body.duracion}, ${req.body.usuario})`)
         res.json(prograNuevo)
     }else{
-        res.json({error: 'metodo no soportado'})
+        res.status(405).json({error: 'Metodo no permitido'})
     }
     
 }

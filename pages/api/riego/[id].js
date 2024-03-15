@@ -15,7 +15,7 @@ export default async function handler(req, res){
       const riego = await conn.query(`SELECT * FROM registroriego WHERE idRegistroRiego=${id}`)
       res.json(riego[0][0])
     }else{
-      res.json({error: 'metodo no soportado'})
+      res.status(405).json({error: 'Metodo no permitido'})
     }
     
 }

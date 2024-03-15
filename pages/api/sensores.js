@@ -23,6 +23,6 @@ export default async function handler(req, res){
         res.json(sensor)
     }
     else{
-        res.json({error: 'metodo no soportado'})
+        res.status(405).json({error: 'Metodo no permitido'})
     }
 }

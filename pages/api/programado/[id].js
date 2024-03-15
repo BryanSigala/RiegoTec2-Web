@@ -20,7 +20,7 @@ export default async function handler(req, res){
       const del = await conn.query(`DELETE FROM programacionriego WHERE idProgramacionRiego=${id}`)
       res.json({metodo: 'DELETE', iden: id})
     }else{
-      res.json({error: 'metodo no soportado'})
+      res.status(405).json({error: 'Metodo no permitido'})
     }
     
 }

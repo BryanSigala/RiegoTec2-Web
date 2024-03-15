@@ -16,7 +16,7 @@ export default async function handler(req, res){
     }else if(req.method==='PATCH'){
       res.json({metodo: 'patch'})
     }else{
-      res.json({error: 'metodo no soportado'})
+      res.status(405).json({error: 'Metodo no permitido'})
     }
     
 }
