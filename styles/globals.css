@@ -4,8 +4,8 @@
 
 :root {
   --foreground-rgb: 27, 57, 106;
-  --background-start-rgb: 168, 162, 158;
-  --background-end-rgb: 128, 127, 131;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
 }
 
 /*
@@ -26,6 +26,27 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+button {
+  height: 100%;
+  width: 80%;
+  background-color: #cdd0ff;
+  color: #1b396a;
+  border: 3px solid;
+  border-radius: 1vw;
+  border-color: #1b396a;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: text-2xl;
+}
+
+#conPrincipal {
+  margin-top: 300px;
+  width: 80%;
+  height: 80%;
+  background-color: #a2c5fd;
+  border: 3px solid;
+  border-radius: 1vw;
 }
 
 @layer utilities {
