@@ -14,7 +14,7 @@ export default async function handler(req, res){
     await cors(req,res)
     const session = await getServerSession(req, res, authOptions)
     if(!session){
-        res.status(401).json({error: 'No autorizado'})
+        res.status(401).json({error: 'No autorizado, inicie sesion primero'})
         return
     }else{
         if(req.method==='POST'){
