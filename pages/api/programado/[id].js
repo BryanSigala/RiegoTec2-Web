@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from "../auth/[...nextauth]"
 const cors = initMiddleware(
     Cors({
-        methods: ['GET', 'POST']
+        methods: ['GET', 'PATCH', 'DELETE']
     })
 )
 
