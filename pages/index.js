@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import { signIn } from 'next-auth/react';
+import LoginButton from "@/components/loginbtn";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,7 +96,8 @@ export default function Home() {
             Discover and deploy boilerplate example Next.js&nbsp;projects.
           </p>
         </a>
-        <button onClick={()=>signIn()}>Iniciar Sesion</button>
+        <LoginButton></LoginButton>
+  
 
         <a
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
