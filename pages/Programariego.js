@@ -1,11 +1,9 @@
-// components/PanelDeControl.js
-
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from './Principal.module.css'; // Cambio de nombre del archivo CSS
+import styles from '../styles/Principal.module.css'; // Cambio de nombre del archivo CSS
 
 const PanelDeControl = () => {
-  const [activeItem, setActiveItem] = useState('estado_riego');
+  const [activeItem, setActiveItem] = useState('programar_riego');
 
   const handleItemClick = (id) => {
     setActiveItem(id);
@@ -45,7 +43,7 @@ const PanelDeControl = () => {
         </div>
       </div>
       <div className={styles.content}>
-        {/* Aqui­ va el contenido principal */}
+        {/* Contenido de todo el espacio sobrante */}
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from '../styles/Principal.css'; // Cambio de nombre del archivo CSS
+import styles from '../styles/Principal.module.css'; // Cambio de nombre del archivo CSS
 
 const PanelDeControl = () => {
   const [activeItem, setActiveItem] = useState('estado_riego');
@@ -43,7 +43,7 @@ const PanelDeControl = () => {
         </div>
       </div>
       <div className={styles.content}>
-        {/* AquÃ­ va el contenido principal */}
+        {/* Contenido de todo el espacio sobrante */}
       </div>
     </div>
   );

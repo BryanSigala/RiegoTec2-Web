@@ -1,0 +1,79 @@
+/* Aplicar estilos al contenedor principal del componente */
+.container {
+  display: flex;
+  height: 100vh; /* Altura del 100% de la ventana */
+  margin: 0;
+  font-family: Arial, sans-serif; /* Fuente elegante */
+}
+
+/* Estilos para la barra lateral */
+.sidebar {
+  width: 400px; /* Ancho fijo para la barra lateral */
+  background-color: #00007a;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrar verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  position: fixed; /* Fijar la posición para que esté siempre a la izquierda */
+  top: 0; /* Alinear en la parte superior */
+  left: 0; /* Alinear en la parte izquierda */
+  bottom: 0; /* Alinear en la parte inferior */
+}
+
+.container {
+  display: flex;
+  margin-left: 200px; /* Agregar margen a la izquierda para que el contenido no se superponga con la barra lateral */
+}
+
+.content {
+  flex: 1; /* Hacer que el contenido ocupe el espacio restante */
+}
+
+/* Estilos para el logo */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 70%;
+  max-height: 100%; /* Ajustar la altura automáticamente */
+}
+
+/* Estilos para los elementos del menú */
+.menu-items {
+  margin-top: 20px; /* Espacio superior */
+  display: flex;
+  flex-direction: column; /* Para que los botones estén uno debajo del otro */
+  align-items: center; /* Centrar horizontalmente */
+}
+
+.menu-item {
+  margin-top: 10px;
+  font-size: 28px;
+  background-color: #00007a;
+  color: white;
+  padding: 10px 20px; /* Ajustar el padding para dar más espacio al botón */
+  border: none;
+  cursor: pointer;
+  width: 100%; /* Ancho al 100% */
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background-color: #fff;
+  color: #00007a;
+}
+
+/* Estilos para el contenido */
+.content {
+  float: left;
+  width: 75%; /* Ancho del contenido */
+  height: 100%; /* Contenido abarca hasta abajo */
+}

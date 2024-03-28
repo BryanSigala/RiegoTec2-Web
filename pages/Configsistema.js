@@ -1,51 +1,52 @@
-import { signIn } from "next-auth/react";
+import { useState } from 'react';
+import Link from 'next/link';
+import styles from '../styles/Principal.module.css'; // Cambio de nombre del archivo CSS
 
-export default function Login() {
-  const handleLogin = async () => {
-    try {
-      await signIn(); // Iniciar sesión utilizando NextAuth
-    } catch (error) {
-      console.error("Error al iniciar sesión:", error);
-    }
+const PanelDeControl = () => {
+  const [activeItem, setActiveItem] = useState('configuracion');
+
+  const handleItemClick = (id) => {
+    setActiveItem(id);
   };
 
   return (
-    <div className="login">
-      <h2>
-        <img
-          src="tec2.png"
-          alt="Logo Sistema de Riego ITCHII"
-          style={{ width: "50px", height: "50px", marginRight: "10px" }}
-        />
-        Sistema de Riego ITCHII
-      </h2>
-      <div className="input-group">
-        <label htmlFor="username">
-          Usuario:
-          <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Ingresa usuario"
-            style={{ marginLeft: "37px" }}
-          />
-        </label>
+    <div className={styles.container}>
+      <div className={styles.sidebar}>
+        <div className={styles.logo}>
+          <img src="tec2.png" alt="LOGO" />
+        </div>
+        <div className={styles['menu-items']}>
+          <div
+            className={`${styles['menu-item']} ${activeItem === 'estado_riego' && styles.active}`}
+            onClick={() => handleItemClick('estado_riego')}
+          >
+            <Link href="/Estadoriego">Estado del riego</Link>
+          </div>
+          <div
+            className={`${styles['menu-item']} ${activeItem === 'programar_riego' && styles.active}`}
+            onClick={() => handleItemClick('programar_riego')}
+          >
+            <Link href="/Programariego">Programar riego</Link>
+          </div>
+          <div
+            className={`${styles['menu-item']} ${activeItem === 'usuarios' && styles.active}`}
+            onClick={() => handleItemClick('usuarios')}
+          >
+            <Link href="/Usuarios">Usuarios</Link>
+          </div>
+          <div
+            className={`${styles['menu-item']} ${activeItem === 'configuracion' && styles.active}`}
+            onClick={() => handleItemClick('configuracion')}
+          >
+            <Link href="/Configsistema">Conf. del sistema</Link>
+          </div>
+        </div>
       </div>
-      <div className="input-group">
-        <label htmlFor="password">
-          Contraseña:
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Ingresa contraseña"
-            style={{ marginLeft: "10px" }}
-          />
-        </label>
+      <div className={styles.content}>
+        {/* AquÃ­ va el contenido principal */}
       </div>
-      <button className="login-btn" onClick={handleLogin}>
-        Iniciar sesión
-      </button>
     </div>
   );
-}
+};
+
+export default PanelDeControl;
