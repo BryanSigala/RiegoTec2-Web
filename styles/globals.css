@@ -19,34 +19,52 @@
 */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  background-color: #c6cbed;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-button {
-  height: 100%;
-  width: 80%;
-  background-color: #cdd0ff;
-  color: #1b396a;
-  border: 3px solid;
-  border-radius: 1vw;
-  border-color: #1b396a;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: text-2xl;
+.input-group {
+  margin-bottom: 15px;
 }
 
-#conPrincipal {
-  margin-top: 300px;
-  width: 80%;
-  height: 80%;
-  background-color: #a2c5fd;
-  border: 3px solid;
-  border-radius: 1vw;
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.login-btn {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background-color: #00007a;
+  color: white;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  align-items: center;
 }
 
 @layer utilities {
